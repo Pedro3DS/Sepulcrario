@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour {
     public TextMeshProUGUI name;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI hordaText;
-    public TextMeshProUGUI countdownText; 
+    public TextMeshProUGUI countdownText;
+    public float initialWait = 0f;
 
     public int hordaAtual = 1;
     public int inimigosPorHorda = 5;
@@ -92,6 +93,7 @@ public class GameManager : MonoBehaviour {
     }
 
     IEnumerator GerenciarHordas() {
+        yield return new WaitForSeconds(initialWait);
         while (true) {
             if(hordaAtual >= 10){
             _groundEnemySpeed +=10f;
