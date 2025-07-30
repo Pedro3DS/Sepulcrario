@@ -45,6 +45,7 @@ public class ButtonsSelect : MonoBehaviour
     public void SetButtonsColor(TMP_Text currentText)
     {
         RemoveColors();
+        // currentText.transform.localScale = new Vector3(1.1f, 1.1f, 1.1f);
         currentText.color = handleColor;
     }
     public void RemoveColors()
@@ -53,6 +54,7 @@ public class ButtonsSelect : MonoBehaviour
         {
             if (i != selectedButtonIndex)
             {
+                buttons[i].GetComponentInChildren<TMP_Text>().transform.localScale = new Vector3(1f, 1f, 1f);
                 buttons[i].GetComponentInChildren<TMP_Text>().color = normalColor;
 
             }
@@ -87,6 +89,7 @@ public class ButtonsSelect : MonoBehaviour
             TMP_Text buttonImage = button.GetComponentInChildren<TMP_Text>();
             if (buttonImage != null)
             {
+                buttonImage.transform.localScale = new Vector3(1f, 1f,1f);
                 buttonImage.color = normalColor;
             }
         }
@@ -95,6 +98,7 @@ public class ButtonsSelect : MonoBehaviour
         TMP_Text selectedButtonImage = selectedButton.GetComponentInChildren<TMP_Text>();
         if (selectedButtonImage != null)
         {
+            selectedButtonImage.transform.localScale = new Vector3(1.1f, 1.1f,1.1f);
             selectedButtonImage.color = handleColor;
         }
 
